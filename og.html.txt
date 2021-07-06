@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Donut Clicker</title>
+  </head>
+  <body>
+    <div>
+    <p>number of donuts: <span id="numDonuts">0</span></p>
+    <p>donuts per clicks: <span id = "donutsPerManualClick">1</span></p>
+    <img
+    src="/images/isaac-quesada-0kF7wNPl1kk-unsplash.jpg"
+     id="donutClicker"
+    />
+  </div>
+  <div>
+    <button id ="purchaseAutoClicker">
+      AutoClicker: <span id="autoClickerCost"> 100</span> |
+      <span id="numAutoClickers">0</span>
+    </button>
+  </div>
+  <div>
+  <button id="purchaseMultiplier">
+      Multiplier: <span id="multiplierCost"> 10</span> |
+      <span id="numMultipliers">0</span>
+    </button>
+  </div>
+    <script src="/og.js"></script>
+  </body>
+</html>

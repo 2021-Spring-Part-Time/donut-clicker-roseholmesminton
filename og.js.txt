@@ -1,0 +1,70 @@
+//original donutmaker without class.
+var numDonuts = 0;
+var autoClickerCost = 100;
+var numAutoClickers = 0;
+var multiplierCost = 10;
+var numMultipliers = 0;
+var donutsPerManualClick = 1;
+var donutsPerAutoClick =  Math.pow(1.2, numMultipliers) + numAutoClickers;
+
+let autoClicker = document.getElementById("purchaseAutoClicker");
+autoClicker.
+autoClicker.addEventListener(
+  'click', () => {
+    purchaseAutoClicker();
+  }
+)
+function purchaseAutoClicker() {
+  if (numDonuts >= autoClickerCost) {
+    numDonuts = numDonuts - autoClickerCost;
+    numAutoClickers += 1;
+    autoClickerCost = Math.round(autoClickerCost * 1.1);
+    document.getElementById("numDonuts").innerHTML = numDonuts;
+    document.getElementById("autoClickerCost").innerHTML = autoClickerCost;
+    document.getElementById("numAutoClickers").innerHTML = numAutoClickers;
+    setInterval(function () {
+      numDonuts = numDonuts + donutsPerAutoClick;
+      document.getElementById("numDonuts").innerHTML =
+        numDonuts;
+      document.getElementById("donutsPerAutoClick").innerHTML = donutsAutoPerClick;
+    }, 1000);
+  }
+}
+const multiplier = document.getElementById("purchaseMultiplier");
+
+multiplier.addEventListener(
+  'click', () => {
+    purchaseMultiplier();
+  }
+)
+function purchaseMultiplier() {
+  if (numDonuts >= multiplierCost) {
+    numDonuts = numDonuts - multiplierCost;
+    numMultipliers += 1;
+    multiplierCost = Math.round(multiplierCost * 1.1);
+    document.getElementById("multiplierCost").innerHTML = multiplierCost;
+    document.getElementById("numMultipliers").innerHTML = numMultipliers;
+    donutsPerManualClick = Math.pow(1.2, numMultipliers);
+    donutsPerAutoClick = Math.pow(1.2, numMultipliers) + numAutoClickers;
+    document.getElementById("numDonuts").innerHTML =
+      numDonuts;
+      document.getElementById("donutsPerClick").innerHTML = donutsPerAutoClick;
+  }
+}
+
+const donutClicker = document.getElementById("donutClicker");
+
+donutClicker.addEventListener(
+  'click', () => {
+    addToNumDonuts();
+
+  })
+
+function addToNumDonuts() {
+  numDonuts = numDonuts + donutsPerManualClick;
+  document.getElementById("numDonuts").innerHTML =
+    numDonuts;
+    document.getElementById("donutsPerManualClick").innerHTML = donutsPerAutoClick;
+}
+console.log(numDonuts);
+console.log(donutsPerClick);
