@@ -4,7 +4,7 @@ class DonutMaker {
         this.numAutoClickers = numAutoClickers;
     }
     addDonut() {
-        this.numDonuts++;;
+        this.numDonuts++;
     }
     addAutoClicker() {
         if (this.numDonuts >= 100) {
