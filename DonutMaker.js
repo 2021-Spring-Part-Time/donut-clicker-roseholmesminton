@@ -21,6 +21,7 @@ export default class DonutMaker {
       this.numAutoClickers++;
       this.numDonuts -= this.autoClickerCost;
       this.autoClickerCost = Math.round(this.autoClickerCost * 1.1);
+
     }
   }
 
@@ -29,7 +30,7 @@ export default class DonutMaker {
       this.addDonut();
     }
   }
-  addMultiplier() {
+    addMultiplier() {
     if (this.numDonuts >= this.multiplierCost) {
       this.numMultipliers++;
       this.numDonuts -= this.multiplierCost;
