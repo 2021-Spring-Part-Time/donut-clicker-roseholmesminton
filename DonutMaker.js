@@ -1,24 +1,40 @@
-class DonutMaker {
-    constructor(numDonuts, numAutoClickers, autoClickerCost) {
-        this.numDonuts = numDonuts;
-        this.numAutoClickers = numAutoClickers;
-        this.autoClickerCost = autoClickerCost;
+export default class DonutMaker {
+  constructor(
+    numDonuts,
+    numAutoClickers,
+    numMultipliers,
+    autoClickerCost,
+    multiplierCost
+  ) {
+    this.numDonuts = numDonuts;
+    this.numAutoClickers = numAutoClickers;
+    this.numMultipliers = numMultipliers;
+    this.autoClickerCost = autoClickerCost;
+    this.multiplierCost = multiplierCost;
+  }
+  addDonut() {
+      this.numDonuts += Math.pow(1.2, this.numMultipliers);
+  }
+
+  addAutoClicker() {
+    if (this.numDonuts >= this.autoClickerCost) {
+      this.numAutoClickers++;
+      this.numDonuts -= this.autoClickerCost;
+      this.autoClickerCost = Math.round(this.autoClickerCost * 1.1);
+
     }
-    addDonut() {
-        this.numDonuts++;;
+  }
+
+  activateAutoClicker() {
+    for (let i = 0; i < this.numAutoClickers; i++) {
+      this.addDonut();
     }
-    addAutoClicker() {
-        if (this.numDonuts >= 100) {
-            this.numAutoClickers++;
-            this.numDonuts -= this.autoClickerCost;
-            this.autoClickerCost = Math.round(this.autoClickerCost * 1.1);
-        }
+  }
+    addMultiplier() {
+    if (this.numDonuts >= this.multiplierCost) {
+      this.numMultipliers++;
+      this.numDonuts -= this.multiplierCost;
+      this.multiplierCost = Math.round(this.multiplierCost * 1.1);
     }
-    activateAutoClicker() {
-        if (this.numAutoClickers > 0) {
-            this.numDonuts += this.numAutoClickers;
-    
-        }
-    }
+  }
 }
-    export default DonutMaker;    
